@@ -9,7 +9,7 @@ const BIAS_SIZE: usize = 1;
 const PIXEL_SIZE: usize = 64;
 const INPUT_SIZE: usize = BIAS_SIZE + PIXEL_SIZE; // 65: bias + 64 pixels
 const LEARNING_RATE: f32 = 0.01;
-const MAX_EPOCHS: usize = 5000;
+const MAX_EPOCHS: usize = 10000;
 const TARGET_MSE: f32 = 1e-6;
 const PRINT_INTERVAL: usize = 500;
 
@@ -43,7 +43,7 @@ fn main() {
     println!("Max epochs: {}", MAX_EPOCHS);
     println!();
 
-    for epoch in 0..MAX_EPOCHS {
+    for epoch in 1..MAX_EPOCHS+1 {
         let mse = brain.train_epoch(&training_data);
 
         // Print progress periodically or when target is reached
