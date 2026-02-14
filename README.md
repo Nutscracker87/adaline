@@ -60,7 +60,7 @@ Place your training files in the `dataset/training/` directory. Each file should
 
 ### Test Data
 
-Place your test files in the `dataset/test/` directory with the same format. Test files can have any name (e.g., `A_broken.txt`, `test_B.txt`), but the first part of the filename (before the first underscore or dot) should indicate the expected character.
+Place your test files in the `dataset/test/` directory with the same format. The **character label** used for comparison is the filename without extension (the “stem”). For example, `A_broken.txt` has stem `A_broken`; the program will expect that file to be recognized as the class `A_broken`. To test against the same class as training, use a stem that matches a training file (e.g. `A.txt` and `A_noisy.txt` both have stems `A` and `A_noisy` — only `A.txt` matches the training class `A`). For a test of the “A” class, name the file so the stem is exactly `A` (e.g. `A.txt` or `A` with no extension).
 
 ## Adding New Datasets
 
@@ -88,10 +88,10 @@ Place your test files in the `dataset/test/` directory with the same format. Tes
 
 ### Adding More Training Samples
 
-You can add multiple training files for the same character by using different filenames:
-- `A.txt`, `A_variant1.txt`, `A_variant2.txt` - All will train the 'A' neuron
+The program uses the **filename stem** (filename without extension) as the character class. So `A.txt` → class `A`, and `A_variant1.txt` → class `A_variant1` (a different class). To add more training samples for the same character, keep the same stem and use a different extension, e.g.:
+- `A.txt`, `A.1`, `A.2` — all train the same `A` neuron (stems are `A`, `A`, `A`).
 
-**Note:** The program uses the filename stem (part before first `.` or `_`) to identify the character class.
+Names like `A_variant1.txt` create a separate class `A_variant1`, not extra samples for `A`.
 
 ### Adding Test Cases
 
