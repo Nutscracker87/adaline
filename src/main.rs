@@ -1,3 +1,6 @@
+//! Adaline character recognizer — trains on 8×8 character grids and tests on noisy/broken symbols.
+//! Run with `cargo run`; data lives in `dataset/training` and `dataset/test`.
+
 mod adaline_nn;
 mod data_loader;
 mod sample;

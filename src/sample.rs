@@ -1,3 +1,5 @@
+//! One labeled character sample: name + 65-dim feature vector (bias + 64 pixels as ±1).
+
 /// Represents a single training/test sample with a character label and pixel grid
 pub struct Sample {
     pub character: String,

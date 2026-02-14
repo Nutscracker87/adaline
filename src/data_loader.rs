@@ -1,3 +1,5 @@
+//! Loads 8×8 character grids from text files (`#` / `.`) into `Sample`s.
+
 use std::fs;
 use crate::sample::Sample;
 

@@ -1,3 +1,5 @@
+//! Adaline (Adaptive Linear Neuron) network with LMS learning. One output neuron per class; struct name "Perceptron" is historical.
+
 use crate::sample::Sample;
 use std::collections::HashMap;
 
